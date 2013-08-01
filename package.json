@@ -1,19 +1,25 @@
 {
-  "name": "thumb.js",
+  "name": "tailor.js",
   "version": "0.0.0",
   "author": "wwwy3y3 <wwwy3y3@gmail.com>",
-  "description": "thumb.js help you process images, includine resize, crop.. using graphicsMagick, and upload to s3 ",
+  "description": "tailor.js help you process images, includine resize, crop.. using graphicsMagick, and upload to s3 ",
   "contributors": [
     "william chang <wwwy3y3@gmail.com>"
   ],
   "keywords": [
-    "image", "process", "s3", "graphicsMagick", "gm", "graphics"
+    "image",
+    "process",
+    "s3",
+    "graphicsMagick",
+    "gm",
+    "graphics"
   ],
   "dependencies": {
-
+    "knox": "~0.8.6",
+    "gm": "~1.11.0"
   },
   "devDependencies": {
-
+    "should": "1.2.x"
   },
   "license": "MIT",
   "engines": {
@@ -28,9 +34,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wwwy3y3/thumb.js.git"
+    "url": "git@github.com:wwwy3y3/tailor.js.git"
   },
   "bugs": {
-    "url": "https://github.com/wwwy3y3/thumb.js/issues"
+    "url": "https://github.com/wwwy3y3/tailor.js/issues"
   }
 }
