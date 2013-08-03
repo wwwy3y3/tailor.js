@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "knox": "~0.8.6",
-    "gm": "~1.11.0"
+    "gm": "~1.11.0",
+    "node-uuid": "~1.4.0",
+    "async": "~0.2.9"
   },
   "devDependencies": {
     "should": "1.2.x"
