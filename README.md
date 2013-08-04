@@ -1,45 +1,35 @@
 
-###	api
-	// upload to server
-	// let them crop
-	var tailor= new Tailor();
-	tailor("file/path").strategy("small")
-					   .args({ width: w, height: h, left: , top: t })
+###	how to use
+	tailor("file/path").strategy("medium")
+					   .args({ width: w, height: h, left: , top: t })  // arguments required in gm api
 					   .process(function(err, datas){
-					   		// datas= { path: "path/to/img",  };
+					   		// datas= { path: "path/to/img",  };  //data will contain the new name of the file (uuid)
 					   	});
 
 
 ##	configure
-	Tailor.s3("path/to/file");  // s3 configs
+set s3 configures
+	Tailor.s3({
+	    key: 'key'
+	  , secret: 'secret'
+	  , bucket: 'bucket'
+	});
+
+
+define some strategy you're going to use
 	Tailor.strategy({
-			mini: {
-				width: 50,
-				height: 50,
-				s3Url: "",
-				process: function(gm, args, done){
-							 gm("./uploads/origin_thumb/" + img_name)
-				                .resize(args.width, args.height)
-				                .crop(100, 100, args.left, args.top)
-				                .write('./uploads/thumb/' + img_name, function(err) {
-				                    if(err) return callback(err);
-				                    callback();
-				            });
-						}
-			},
+		medium: {
+			width: 100,
+			height: 100,
+			process: 'cropAndScale',
+			keepSrc: true  //optional, whethor keep the source file or not, after upload to s3
 
-			thumb: {
-				width: 100,
-				height: 100,
-				process: 'cropAndScale'
+		},
 
-			}
+		large: {
+			width: 150,
+			height: 150,
+			process: 'cropAndScale'
 
-
-		})
-
-### TODO
-*	middleware
-	*	upload to server, upload origin to s3, keep it(?), callback the file path
-
-*	accepted formats
+		}
+	});
