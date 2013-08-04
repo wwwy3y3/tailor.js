@@ -9,6 +9,7 @@
 
 ##	configure
 set s3 configures
+
 	Tailor.s3({
 	    key: 'key'
 	  , secret: 'secret'
@@ -16,7 +17,12 @@ set s3 configures
 	});
 
 
+
+
 define some strategy you're going to use
+
+
+
 	Tailor.strategy({
 		medium: {
 			width: 100,
